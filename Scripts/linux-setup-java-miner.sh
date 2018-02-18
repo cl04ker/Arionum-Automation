@@ -6,6 +6,8 @@ apt-get -y install maven git build-essential
 
 apt-get -y -o Dpkg::Options::="--force-overwrite" install openjdk-9-jdk
 
+export JAVA_HOME=/usr
+
 cd ../..
 
 git clone git://github.com/ProgrammerDan/arionum-java
