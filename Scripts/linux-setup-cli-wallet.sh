@@ -22,4 +22,4 @@ apt-get -y install git php7.2
 
 git clone https://github.com/arionum/lightWalletCLI.git
 
-chown -R $(logname): lightWalletCLI
+chown -R $(who | awk {'print $1'}): lightWalletCLI

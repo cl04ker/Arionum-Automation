@@ -17,4 +17,4 @@ cd arionum-java/arionum-miner \
   && chmod +x build-argon.sh \
   && ./build-argon.sh
 
-chown -R $(logname): ../../arionum-java
+chown -R $(who | awk {'print $1'}): ../../arionum-java
