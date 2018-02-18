@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER=$(who | awk {'print $1'})
+USER=$(who | awk 'NR==1{print $1}')
 
 # Functions
 add_ppa(){
@@ -24,4 +24,4 @@ apt-get -y install git php7.2
 
 git clone https://github.com/arionum/lightWalletCLI.git
 
-chown -R $USER: lightWalletCLI
+chown -R $USER:$USER lightWalletCLI

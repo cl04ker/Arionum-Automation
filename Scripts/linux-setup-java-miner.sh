@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER=$(who | awk {'print $1'})
+USER=$(who | awk 'NR==1{print $1}')
 
 apt-get update
 
@@ -19,4 +19,4 @@ cd arionum-java/arionum-miner \
   && chmod +x build-argon.sh \
   && ./build-argon.sh
 
-chown -R $USER: ../../arionum-java
+chown -R $USER:$USER ../../arionum-java
