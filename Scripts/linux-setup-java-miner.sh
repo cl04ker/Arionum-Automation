@@ -1,5 +1,7 @@
 #!/bin/bash
 
+USER=$(who | awk {'print $1'})
+
 apt-get update
 
 apt-get -y install maven git build-essential
@@ -17,4 +19,4 @@ cd arionum-java/arionum-miner \
   && chmod +x build-argon.sh \
   && ./build-argon.sh
 
-chown -R $(who | awk {'print $1'}): ../../arionum-java
+chown -R $USER: ../../arionum-java

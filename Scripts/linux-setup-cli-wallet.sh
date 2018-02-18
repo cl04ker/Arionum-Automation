@@ -1,5 +1,7 @@
 #!/bin/bash
 
+USER=$(who | awk {'print $1'})
+
 # Functions
 add_ppa(){
   grep -h "ondrej/php" /etc/apt/sources.list.d/* > /dev/null
@@ -22,4 +24,4 @@ apt-get -y install git php7.2
 
 git clone https://github.com/arionum/lightWalletCLI.git
 
-chown -R $(who | awk {'print $1'}): lightWalletCLI
+chown -R $USER: lightWalletCLI
